@@ -18,7 +18,7 @@ function logger({ getState }){
     }
 }
 
-export const store = createStore(rootReducer,applyMiddleware(logger));
+export const store = createStore(rootReducer,applyMiddleware(logger,thunk));
 
 ReactDOM.render(
     <Provider store={store}>

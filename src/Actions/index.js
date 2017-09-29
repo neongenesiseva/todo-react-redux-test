@@ -18,10 +18,13 @@ export function Delete(index){
     }
 }
 
-export function Edit(cur){
+export function SaveEdit(item,index){
+    let currentState=store.getState().main.slice();
+        currentState[index] = item;
+    let modifiedState = currentState.slice();
     return {
-        type:"edit",
-        payload:!cur
+        type:"save",
+        payload:modifiedState
     }
 }
 

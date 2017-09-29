@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
-import Modal from './Modal';
 import SaveForm from './SaveForm';
 
 
@@ -45,11 +44,5 @@ class List extends Component {
     }
 };
 
-function mapStateToProps(state){
-    return {
-        isEdit:state.isEdit
-    }
-}
-
-export default connect(mapStateToProps,actions)(List)
+export default connect(null,actions)(List)
 

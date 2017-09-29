@@ -3,16 +3,7 @@ import { connect } from 'react-redux'
 import * as action from '../Actions'
 import List from './List'
 
-class ListItem extends Component {
-
-    shouldComponentUpdate(nextProps){
-        if (this.props.main.length !== nextProps.main.length ){
-            return true;
-        };
-        return false
-    }
-
-    
+class ListItem extends Component {    
 
     render(){
         return (

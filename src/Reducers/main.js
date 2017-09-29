@@ -8,9 +8,11 @@ export default function (state=initialState,action){
         case "add":
             return state.concat(action.payload);
         case "delete":
-            console.log("accessed delete");
             return action.payload;
+        case "save":
+            return action.payload;
+        default:
+            return state;
     }
     
-    return state
 }

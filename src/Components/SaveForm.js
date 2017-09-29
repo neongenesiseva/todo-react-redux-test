@@ -11,21 +11,27 @@ class SaveForm extends React.Component{
     };
 
     saveEdit(event){
-        let name = this.refs.saveEdit.value;
-        let time = new Date().toDateString();
-        
+        event.preventDefault();
+        let item = {};
+        item.name = this.refs.save.value;
+        item.time = new Date().toDateString();
+        this.props.SaveEdit(item,this.props.index);
+        this.props.Edit(true);
     }
 
     render(){
+
         let {
-            index,
-            name
+            name,
+            time
             } = this.props;
+
         return (
             <Modal>
-                <form onSubmit={this.saveEdit}>
-                    <input value={name} type="text" ref="saveEdit"/>
-                    <input type="submit" />
+                <form className="modal">
+                    <p>{time}</p><br />
+                    <input defaultValue={name} type="text" ref="save"/>
+                    <input type="submit" onClick={this.saveEdit}/>
                 </form>
             </Modal>
         )
@@ -35,8 +41,7 @@ class SaveForm extends React.Component{
 
 function mapStateToProps(state){
     return {
-        main:state.main,
-        isEdit:state.isEdit
+        main:state.main
     }
 }
 

@@ -13,6 +13,7 @@ class Add extends React.Component{
         if(!this.refs.add.value){
             e.preventDefault();
         } else {
+            e.preventDefault();
             let item = {};
             item.time = new Date().toDateString();
             item.name = this.refs.add.value;
@@ -24,8 +25,10 @@ class Add extends React.Component{
     render(){
         return(
             <div>
+                <form>
                 <input placeholder="add" ref="add" type="text"/>
-                <input type="button" onClick={this.add} value="ADD"/>
+                <input type="submit" onClick={this.add} value="ADD"/>
+                </form>
             </div>
         )
     }
