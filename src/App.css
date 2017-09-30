@@ -27,14 +27,14 @@
   to { transform: rotate(360deg); }
 }
 
-#modal {
+/*#modal {
   top: 50%;
   left: 45%;
   position:fixed;
   z-index: 999;
   height: 40%;
   width: 20%;
-}
+}*/
 
 .modal {
   background-color: rgba(50,50,50,0.5);

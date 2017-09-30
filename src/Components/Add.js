@@ -2,6 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
 
+const AddStyle = {
+
+    marginTop : '20px',
+    marginBottom : '20px'
+
+}
+
 class Add extends React.Component{
 
     constructor(props){
@@ -24,10 +31,10 @@ class Add extends React.Component{
 
     render(){
         return(
-            <div>
+            <div style={AddStyle}>
                 <form>
-                <input placeholder="add" ref="add" type="text"/>
-                <input type="submit" onClick={this.add} value="ADD"/>
+                    <input placeholder="add" ref="add" type="text"/>
+                    <input type="submit" onClick={this.add} value="ADD"/>
                 </form>
             </div>
         )

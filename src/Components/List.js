@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 import * as actions from '../Actions';
 import SaveForm from './SaveForm';
 
+const ListStyle = {
+    listStyleType:'none',
+    borderRadius: '5px',
+    borderStyle: 'dotted',
+    borderColor: 'black',
+    margin:'10px auto'
+}
+
 
 class List extends Component {
 
@@ -33,7 +41,7 @@ class List extends Component {
         const modal = isEdit ? <SaveForm index={index} name={name} time={time} Edit={this.Edit}/> : null
 
         return (
-            <li>
+            <li style={ListStyle}>
                 {name}<br/>
                 {time}<br />
                 <button onClick={()=>Delete(index)}>Delete</button>
